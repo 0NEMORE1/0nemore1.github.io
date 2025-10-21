@@ -25,14 +25,11 @@
             letter-spacing: 1.5px;
             text-shadow: 0 0 10px rgba(146, 184, 255, 0.4);
         }
-
-        /* --- 💡 CSS ที่เพิ่มเข้ามา 💡 --- */
         .page-subtitle {
             text-align: center;
             margin-top: -25px; 
             margin-bottom: 30px;
         }
-        
         .page-subtitle .slogan {
             font-size: 1.1em;
             font-style: italic;
@@ -41,17 +38,13 @@
             padding: 0;
             line-height: 1.4;
         }
-        
-        .page-subtitle .copyright {
+         .page-subtitle .copyright {
             font-size: 0.9em;
             color: #8a8aae;
             margin: 8px 0 0 0;
             padding: 0;
             letter-spacing: 0.5px;
-        }
-        
-
-        .messier-grid {
+        }  .messier-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
             gap: 25px;
@@ -129,9 +122,7 @@
             font-size: 1em;
             font-weight: bold;
             letter-spacing: 0.5px;
-        }
-
-        @media (max-width: 768px) {
+        }  @media (max-width: 768px) {
             .messier-grid {
                 grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
                 padding: 20px;
@@ -149,7 +140,7 @@
             }
         }
 
-        @media (max-width: 480px) {
+ @media (max-width: 480px) {
             .messier-grid {
                 grid-template-columns: 1fr;
                 padding: 15px;
@@ -168,7 +159,7 @@
         }
         
        
-        .lightbox-overlay {
+ .lightbox-overlay {
             display: none; 
             position: fixed; 
             z-index: 1000; 
@@ -181,11 +172,9 @@
             align-items: center;
             animation: fadeIn 0.3s ease; 
         }
-        
-        .lightbox-active {
+         .lightbox-active {
             display: flex; 
         }
-
         #lightbox-image {
             max-width: 90vw; 
             max-height: 90vh; 
@@ -194,7 +183,6 @@
             box-shadow: 0 0 50px rgba(146, 184, 255, 0.5);
             border: 2px solid #92b8ff;
         }
-
         .lightbox-close {
             position: absolute;
             top: 20px;
@@ -208,7 +196,6 @@
         .lightbox-close:hover {
             color: #92b8ff; 
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -217,9 +204,7 @@
     </style>
 </head>
 <body>
-
     <h1>Messier Objects Gallery</h1>
-
     <div class="page-subtitle">
         <p class="slogan">"A chronicle of relentless pursuit: Woraphop Tessarak's journey through the cosmos, 7 Aug 2024 – Present."</p>
         <p class="copyright">&copy; Woraphop Astrophotography</p>
@@ -1439,16 +1424,12 @@
         <span class="lightbox-close">&times;</span>
         <img id="lightbox-image" src="" alt="ภาพขยาย">
     </div>
-
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
+        document.addEventListener('DOMContentLoaded', () => {  
             const lightboxOverlay = document.getElementById('lightboxOverlay');
             const lightboxImage = document.getElementById('lightbox-image');
             const closeButton = document.querySelector('.lightbox-close');
             const gridImages = document.querySelectorAll('.messier-item img');
-
             gridImages.forEach(image => {
                 image.addEventListener('click', () => {
                     if (image.src && image.src !== window.location.href) { 
@@ -1457,14 +1438,11 @@
                     }
                 });
             });
-
             function closeLightbox() {
                 lightboxOverlay.classList.remove('lightbox-active'); 
                 lightboxImage.src = ""; 
             }
-
             closeButton.addEventListener('click', closeLightbox);
-
             lightboxOverlay.addEventListener('click', (event) => {
                 if (event.target === lightboxOverlay) {
                     closeLightbox();
